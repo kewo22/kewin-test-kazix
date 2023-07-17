@@ -1,8 +1,16 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
 ## Getting Started
 
-First, run the development server:
+### prerequisite
+
+- Nodejs
+
+### Instal Dependencies 
+```bash
+npm install
+# or
+yarn install
+```
+### Instal Run Local Server 
 
 ```bash
 npm run dev
@@ -11,24 +19,15 @@ yarn dev
 # or
 pnpm dev
 ```
+### Instal Run Local Server
+Runs in http://localhost:3000/
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Assumptions
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Below assumptions have been made when developing the application:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Cards placed on the top are for live matches and bets cannot be placed for live matches.
+- User will enter amount when selecting the result.
+- Coupon will be generated on user action.
+- Matches, results and total amount is shown in the coupon.
+- Coupon will is generated in a separate route.
