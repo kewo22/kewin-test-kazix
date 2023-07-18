@@ -21,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.className} p-4`}>
-        <section className="rounded-32 bg-secondary-dark-800 text-white w-[1512px] p-4">
+        <section
+          className={`rounded-32 bg-secondary-dark-800 text-white w-full p-4`}
+        >
           <MatchProvider>{children}</MatchProvider>
         </section>
       </body>

@@ -1,12 +1,13 @@
 "use client";
 
-import Link from "next/link";
-
+import { useContext, useEffect } from "react";
 import GameCard from "../_components/game-card/game-card";
 import { GameTitleBar } from "../_components/game-title-bar/game-title-bar";
 import HeighLightCard from "../_components/highlight-card/heighlight-card";
+import NavigationBar from "../_components/navigation-bar/navigation-bar";
 
 import { Match } from "../_interfaces/match";
+import { MatchContext, MatchContextType } from "../_store/game-context";
 
 export default function Home() {
   const plMatches: Match[] = [
@@ -211,10 +212,12 @@ export default function Home() {
     console.log(e);
     return;
   };
+
   const onLeftArrowClick = (e: any) => {
     console.log(e);
     return;
   };
+
   const onRightArrowClick = (e: any) => {
     console.log(e);
     return;
@@ -222,16 +225,11 @@ export default function Home() {
 
   return (
     <main className="">
-      <div className="flex justify-end w-full py-2 px-5 bg-secondary-dark-50 mb-3 rounded-lg">
-        <Link
-          href="/coupon"
-          className="text-sm hover:bg-primary hover:text-secondary-dark-50 p-2 rounded-md border border-primary transition-all"
-        >
-          View Coupon
-        </Link>
+      <div className="mb-5">
+        <NavigationBar />
       </div>
 
-      <div className="flex gap-5 mb-3">
+      <div className="flex flex-col sm:flex-row gap-5 mb-3">
         {/* HARDCODED FOR DEMO */}
         <HeighLightCard />
         <HeighLightCard />
@@ -246,7 +244,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="grid grid-cols-3 gap-5 w-5/6 mb-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full lg:w-5/6 mb-3">
         {plMatches.map((match, i) => {
           return <GameCard key={i} {...match} />;
         })}
@@ -261,7 +259,7 @@ export default function Home() {
         />
       </div>
 
-      <div className="grid grid-cols-3 gap-5 w-5/6 mb-3">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 w-full lg:w-5/6 mb-3">
         {laLiga.map((match, i) => {
           return <GameCard key={i} {...match} />;
         })}

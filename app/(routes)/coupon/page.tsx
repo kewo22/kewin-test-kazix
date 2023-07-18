@@ -1,14 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useContext } from "react";
+
+import { useRouter } from "next/navigation";
 
 import { MatchContext, MatchContextType } from "@/app/_store/game-context";
+import { Button } from "@/app/_components/shared/button";
 
 export default function Coupon() {
-  const { matchProbabilities } = React.useContext(
-    MatchContext
-  ) as MatchContextType;
-  console.log(matchProbabilities);
+  const router = useRouter();
+
+  const { matchProbabilities } = useContext(MatchContext) as MatchContextType;
+
+  useEffect(() => {
+    console.log(matchProbabilities);
+  }, [matchProbabilities]);
 
   let totalValue = 0;
   let totalWins = 0;
@@ -24,9 +30,17 @@ export default function Coupon() {
   });
 
   return (
-    <section className={`h-screen grid place-items-center`}>
-      <div className="max-w-2xl mx-auto">
-        <div className="flex flex-col gap-3">
+    <section
+      className={`h-screen flex flex-col items-center mx-auto sm:w-3/4 lg:w-3/5`}
+    >
+      <div className="w-full py-5">
+        <Button onClick={() => router.back()}>
+          <span className="icon-arrow-left mr-2"></span>
+          To matches
+        </Button>
+      </div>
+      <div className="flex-grow flex justify-center w-full">
+        <div className="flex flex-col gap-3 w-full">
           <div className="rounded-lg bg-secondary-dark-50 p-5 flex">
             <span className="icon-user text-5xl mr-3"></span>
             <div>
@@ -34,7 +48,6 @@ export default function Coupon() {
               <p>Fernando</p>
             </div>
           </div>
-
           <div className="overflow-x-auto shadow-md rounded-lg">
             <div className="inline-block min-w-full align-middle">
               <div className="overflow-hidden">

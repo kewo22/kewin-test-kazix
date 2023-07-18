@@ -22,16 +22,16 @@ export const Button: React.FC<ButtonProps> = ({ children, ...attributes }) => {
 
   useEffect(() => {
     if (size === "xs") {
-      setSizeClass("h-[30px] px-2");
+      setSizeClass("h-[30px] lg:h-[35px] px-2 lg:px-3");
     }
     if (size === "sm") {
-      setSizeClass("h-[36px] px-3");
+      setSizeClass("h-[35px] lg:h-[40px] px-3 lg:px-4");
     }
     if (size === "md") {
-      setSizeClass("h-[42px] px-3");
+      setSizeClass("h-[40px] lg:h-[45px] px-3 lg:px-4");
     }
     if (size === "lg") {
-      setSizeClass("h-[48px] px-3");
+      setSizeClass("h-[45px] lg:h-[50px] px-3 lg:px-4");
     }
   }, [size]);
 
